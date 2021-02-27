@@ -10,14 +10,39 @@
 const arr = [[11 ,2 ,4],[4, 5, 6],[10, 8 ,-12]];
 
 function diagonalDifference(arr) {
-    // sumamos los valores diagonales de los arrays
-    const firstDiagonal = arr[0][0] + arr[1][1] + arr[2][2];
-    const secondDiagonal = arr[0][2] + arr[1][1] + arr[2][0];
-    //restamos la segunda diagonal a la primera
-    const difference = parseInt(firstDiagonal - secondDiagonal);
-    //utilizamos Math.abs para obtener el número absoluto del resultado y lo retornamos
-    console.log(Math.abs(difference));
+    const firstDiagonal= [];
+    let secondCount = arr.length -1 ;
+    const secondDiagonal = [];
+    let resultado = 0;
+    let firstSum = 0;
+    let secondSum = 0;
+
+    const sumArrays = (first, second) => {
+        for (let i = 0; i < second.length; i++) {
+            secondSum += second[i];
+        }
+        for (let i = 0; i < first.length; i++) {
+            firstSum += first[i];
+        }
+        return 
+    }
+    
+    for (let i = 0; i < arr.length; i++) {
+        let agregarFirst = arr[i][i];
+        firstDiagonal.push(agregarFirst);
+        let agregarSecond = arr[i][secondCount];
+        secondDiagonal.push(agregarSecond)
+        secondCount = (secondCount - 1);
+    }
+
+    sumArrays(firstDiagonal,secondDiagonal);
+
+    const difference = firstSum - secondSum;
+
+    console.log(difference);
     return Math.abs(difference);
 }
 
 diagonalDifference(arr);
+
+//me salioooooooo!!!!
